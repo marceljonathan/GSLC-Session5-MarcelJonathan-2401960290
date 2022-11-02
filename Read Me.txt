@@ -1,0 +1,10 @@
+1. Create Database with name 'bookpal'
+
+2. Migrate All Migrations to database
+
+3. Insert data to table 'books' and below is a query to add data
+
+INSERT INTO `books` (`id`, `content_url`, `content_type`, `title`, `author`, `description`, `ISBN`, `price`) VALUES
+(1, 'https://cdn.gramedia.com/uploads/items/Sang_Pemimpi.jpg', 'image', 'Sang Pemimpi', 'Andrea Hirata', 'Bagi Ikal dan Arai, kemiskinan boleh mengambil segalanya, kecuali satu: mimpi. Mereka letakkan mimpi setinggi-tingginya. Dua anak kuli timah itu mencurahkan segenap tenaga. Meskipun demikian, manisnya hidup tak boleh lalai dilewatkan. Di sela kesibukan belajar di sekolah menengah, selalu saja ada celah untuk menikmati masa remaja. Mencuri-curi waktu menonton bioskop, mengejar cinta pertama, adalah sekian dari kisah mereka. Namun, satu hal tak pernah terlupa, impian yang telah lama bersemayam dalam diri.', 9786022916635, 89000),
+(2, 'https://cdn.gramedia.com/uploads/items/9786022910572_supernova-gelombang__5.jpg', 'image', 'Supernova 5 - Gelombang', 'Dewi Lestari', 'Sebuah upacara gondang mengubah segalanya bagi Alfa. Makhluk misterius yang disebut Si Jaga Portibi tiba-tiba muncul menghantuinya. Orang-orang sakti berebut menginginkan Alfa menjadi murid mereka. Dan, yang paling mengerikan dari itu semua adalah setiap tidurnya menjadi pertaruhan nyawa. Sesuatu menunggu Alfa di alam mimpi.', 9786022910572, 109000),
+(3, 'https://cdn.gramedia.com/uploads/items/img20220101_11444970.jpg', 'image', 'Filosofi Teras', 'Henry Manampiring', 'Lebih dari 2000 tahun lalu, sebuah mazhab filsafat menemukan akar masalah dan juga solusi dari banyak emosi negatif. Stoisisme, atau Filosofi Teras, adalah filsafat Yunani-Romawi kuno yang bisa membantu kita mengatasi emosi negatif dan menghasilkan mental yang tangguh dalam menghadapi naik-turun nya kehidupan.', 9786233463034, 98000);
