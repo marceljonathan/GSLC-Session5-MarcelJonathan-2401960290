@@ -6,7 +6,7 @@
 
 @section('content')
     <h1>Edit Book Page</h1>
-    <h3>At this page you can add, update, and delete books</h3>
+    <h3>At this page you can add, update, or delete books</h3>
     <br>
     <br>
 
