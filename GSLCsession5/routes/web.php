@@ -20,6 +20,12 @@ use App\Http\Controllers\BooksController;
 
 Route::get('/', [BooksController::class, 'index'])->name('view_books');
 
-Route::get('/addBooks', [BooksController::class, 'addBooks'])->name('add_books_view');
+Route::get('/editBooks', [BooksController::class, 'addBooks'])->name('add_books_view');
 
-Route::post('/addBooks/post', [BooksController::class, 'addBooksLogic'])->name('add_books_logic');
+Route::post('/editBooks/post', [BooksController::class, 'addBooksLogic'])->name('add_books_logic');
+
+Route::delete('/editBooks/delete/{id}', [BooksController::class, 'deleteLogic'])->name('delete_books_logic');
+
+Route::get('/editBooks/update/{id}', [BooksController::class, 'updateBooks'])->name('update_books_view');
+
+Route::patch('/editBooks/update/{id}', [BooksController::class, 'updateBooksLogic'])->name('update_books_logic');

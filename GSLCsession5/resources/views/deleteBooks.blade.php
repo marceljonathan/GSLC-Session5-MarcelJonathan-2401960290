@@ -1,12 +1,17 @@
-@extends('template')
-
-@section('title', 'home')
-
-@section('content')
-    <h1 style="justify-content: center">Welcome to BookPal System Administrations</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>@yield('title')</title>
+</head>
+<body>
+    <h1>Update or Delete Book</h1>
 
     @if(count($books) < 1)
-        <h2>Ooopsss!!! There's nothing to view</h2>
+        <h2>Ooopsss!!! There's no books to update or delete</h2>
     @else
         <div>
             <table class="table">
@@ -19,6 +24,7 @@
                         <th scope="col">Description</th>
                         <th scope="col">ISBN</th>
                         <th scope="col">Price</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,10 +43,20 @@
                             <td>{{$book->description}}</td>
                             <td>{{$book->ISBN}}</td>
                             <td>{{$book->price}}</td>
+                            <td><form action="{{route('update_books_view', ['id' => $book->id])}}">
+                                <button type="submit" class="btn btn-warning">UPDATE</button>
+                            </form></td>
+                            <td><form action="{{route('delete_books_logic', ['id' => $book->id])}}" method="POST">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" class="btn btn-danger">DELETE</button>
+                            </form></td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
     @endif
-@endsection
+</body>
+</html>
+

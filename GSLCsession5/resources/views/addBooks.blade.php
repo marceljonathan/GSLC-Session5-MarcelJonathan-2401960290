@@ -1,11 +1,13 @@
-@extends('template')
-
-@section('title', 'Add Books')
-
-{{-- @include('viewTable') --}}
-
-@section('content')
-    <h1>Add Books</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@yield('title')</title>
+</head>
+<body>
+    <h1>Add Book</h1>
 
     <form action="{{route('add_books_logic')}}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -26,8 +28,10 @@
             <input type="text" class="form-control" id="" name="author">
         </div>
         <div class="mb-3">
-            <label for="" class="form-label">Description</label>
-            <input type="text" class="form-control" id="" name="description">
+            <div class="form-floating">
+                <label for="floatingTextarea2">Description</label>
+                <textarea name="description" type="long text" class="form-control" placeholder="Type Book Description here" id="floatingTextarea2" style="height: 100px"></textarea>
+              </div>
         </div>
         <div class="mb-3">
             <label for="" class="form-label">ISBN</label>
@@ -40,4 +44,5 @@
 
         <button type="submit" class="btn btn-primary">Add Book</button>
     </form>
-@endsection
+</body>
+</html>
