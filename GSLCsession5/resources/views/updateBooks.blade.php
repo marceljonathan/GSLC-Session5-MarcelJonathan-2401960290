@@ -12,7 +12,7 @@
 
     <h1>Update Book</h1>
 
-    <form action="{{route('update_books_logic', ['id' => $books->id])}}" enctype="multipart/form-data">
+    <form action="{{ route('update_logic', ['id' => $books->id]) }}" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="" class="form-label">Content Url</label>

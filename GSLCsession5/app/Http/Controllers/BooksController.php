@@ -57,8 +57,6 @@ class BooksController extends Controller
     }
 
     public function updateBooksLogic(Request $request){
-        dd($request);
-
         $request->validate([
             'content_url' => 'required',
             'content_type' => 'required',
@@ -80,7 +78,6 @@ class BooksController extends Controller
         ]);
 
         return redirect()->route('add_books_view');
-
     }
 
 }

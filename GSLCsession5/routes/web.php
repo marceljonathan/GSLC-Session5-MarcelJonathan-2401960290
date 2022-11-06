@@ -28,4 +28,4 @@ Route::delete('/editBooks/delete/{id}', [BooksController::class, 'deleteLogic'])
 
 Route::get('/editBooks/update/{id}', [BooksController::class, 'updateBooks'])->name('update_books_view');
 
-Route::patch('/editBooks/update/{id}', [BooksController::class, 'updateBooksLogic'])->name('update_books_logic');
+Route::patch('/editBooks/update/post/{id}', [BooksController::class, 'updateBooksLogic'])->name('update_logic');
