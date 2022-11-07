@@ -12,8 +12,10 @@
 
     <h1>Update Book</h1>
 
-    <form action="{{ route('update_logic', ['id' => $books->id]) }}" enctype="multipart/form-data">
+    <form action="{{ route('update_logic', ['id' => $books->id]) }}" method="POST" enctype="multipart/form-data">
+        @method('patch')
         @csrf
+
         <div class="mb-3">
             <label for="" class="form-label">Content Url</label>
             <input type="url" value="{{ $books->content_url }}" class="form-control" id="" name="content_url">
@@ -31,11 +33,12 @@
             <input type="text" value="{{ $books->author }}" class="form-control" id="" name="author">
         </div>
         <div class="mb-3">
-            <div class="form-floating">
+            <label for="" class="form-label">Book Description</label>
+            <input type="long text" value="{{ $books->description }}" class="form-control" id="" name="description">
+            {{-- <div class="form-floating">
                 <label for="floatingTextarea2">Description</label>
-                <input type="description" value="{{ $books->description }}" class="form-control" id="" name="author">
-                {{-- <textarea name="description" type="long text" value="{{ $books->description }}"  class="form-control" placeholder="Type Book Description here" id="floatingTextarea2" style="height: 100px"></textarea> --}}
-              </div>
+                <textarea name="description" type="long text" value="{{ $books->description }}"  class="form-control" placeholder="Type Book Description here" id="floatingTextarea2" style="height: 100px"></textarea>
+            </div> --}}
         </div>
         <div class="mb-3">
             <label for="" class="form-label">ISBN</label>
